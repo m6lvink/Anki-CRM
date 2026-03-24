@@ -1,0 +1,9 @@
+{
+    "package": "anki_crm",
+    "name": "Anki-CRM: Relational Knowledge Graph",
+    "mod": 1,
+    "min_point_version": 231000,
+    "max_point_version": -1,
+    "conflicts": [],
+    "tags": ["productivity", "organization", "review"]
+}

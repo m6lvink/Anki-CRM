@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Anki-CRM Add-on Configuration",
+    "description": "Configuration schema for the Anki-CRM: Relational Knowledge Graph add-on",
+    "type": "object",
+    "required": [
+        "hud_height",
+        "hud_auto_show",
+        "link_shortcut",
+        "hud_position",
+        "max_chips_displayed",
+        "chip_colors"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "hud_height": {
+            "type": "integer",
+            "description": "Height of the HUD bar in pixels",
+            "default": 48,
+            "minimum": 32,
+            "maximum": 120
+        },
+        "hud_auto_show": {
+            "type": "boolean",
+            "description": "Whether the HUD automatically appears when a card is shown",
+            "default": true
+        },
+        "link_shortcut": {
+            "type": "string",
+            "description": "Keyboard shortcut to open the link/relationship dialog",
+            "default": "Ctrl+L",
+            "pattern": "^(Ctrl|Alt|Shift|Meta)(\\+(Ctrl|Alt|Shift|Meta))*\\+[A-Za-z0-9]$"
+        },
+        "hud_position": {
+            "type": "string",
+            "description": "Screen position of the HUD bar",
+            "default": "bottom",
+            "enum": ["top", "bottom"]
+        },
+        "max_chips_displayed": {
+            "type": "integer",
+            "description": "Maximum number of relationship chips shown in the HUD before truncating",
+            "default": 20,
+            "minimum": 1,
+            "maximum": 100
+        },
+        "chip_colors": {
+            "type": "object",
+            "description": "Color theme definitions for each relationship chip type",
+            "additionalProperties": {
+                "$ref": "#/definitions/chip_color_scheme"
+            },
+            "default": {
+                "stakeholder": {"bg": "#1a1a2e", "accent": "#e94560"},
+                "project": {"bg": "#1a1a2e", "accent": "#0f3460"}
+            }
+        }
+    },
+    "definitions": {
+        "chip_color_scheme": {
+            "type": "object",
+            "description": "Background and accent color pair for a chip type",
+            "required": ["bg", "accent"],
+            "additionalProperties": false,
+            "properties": {
+                "bg": {
+                    "type": "string",
+                    "description": "Background color as a CSS hex color string",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                },
+                "accent": {
+                    "type": "string",
+                    "description": "Accent/highlight color as a CSS hex color string",
+                    "pattern": "^#[0-9A-Fa-f]{6}$"
+                }
+            }
+        }
+    }
+}

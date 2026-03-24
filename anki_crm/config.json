@@ -1,0 +1,11 @@
+{
+    "hud_height": 48,
+    "hud_auto_show": true,
+    "link_shortcut": "Ctrl+L",
+    "hud_position": "bottom",
+    "max_chips_displayed": 20,
+    "chip_colors": {
+        "stakeholder": {"bg": "#1a1a2e", "accent": "#e94560"},
+        "project": {"bg": "#1a1a2e", "accent": "#0f3460"}
+    }
+}
