@@ -32,7 +32,9 @@ Good for: Japanese business vocab, legal terms tied to specific cases, technical
 
 ### AnkiWeb (recommended)
 
-Open Anki > Tools > Add-ons > Get Add-ons and enter code **XXXXXXXX**.
+Open Anki > Tools > Add-ons > Get Add-ons and enter code **992441620**.
+
+> Requires Anki 2.1.1 or later.
 
 ### Manual
 
