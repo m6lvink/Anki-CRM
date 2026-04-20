@@ -98,10 +98,7 @@ class AnkiDBAdapter:
         self._db = anki_db
 
     def execute(self, sql: str, *args: Any) -> None:
-        if args:
-            self._db.execute(sql, list(args))
-        else:
-            self._db.execute(sql)
+        self._db.execute(sql, *args)
 
     def all(self, sql: str, *args: Any) -> list:
         return self._db.all(sql, *args)
